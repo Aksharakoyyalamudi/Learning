@@ -9,7 +9,21 @@
     <title>Document</title>
 </head>
 
-<body>
+<body style="background-image: url('./image1.png');">
+    <div>
+        <ul>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="Home.html">Home</a>
+            </li>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a
+                    href="Register.html">register</a></li>
+            <li style="padding: 2%;  background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="login.html">login</a>
+            </li>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a
+                    href="Register.html">classes</a></li>
+        </ul>
+    </div>
+
+
     <div class="container">
         <div class="mainbox">
             <div class="header">
@@ -40,8 +54,9 @@
                         <th><label for="confirmPassword"> confirmPassword*</label></th>
                     </tr>
                     <tr>
-                        <td><input id="Password" type = "password" placeholder="enter Password"></td>
-                        <td><input id="confirmPassword" type = "password" placeholder="enter Password agian" required></td>
+                        <td><input id="Password" type="password" placeholder="enter Password"></td>
+                        <td><input id="confirmPassword" type="password" placeholder="enter Password agian" required>
+                        </td>
                     </tr>
                     <br>
                     <tr>
@@ -76,10 +91,10 @@
                                 <option value="employeed">employeed</option>
                             </select></td>
                         <td>
-                            <div class="slider">
+                            <div class="slider" style="display: flex;">
                                 <input type="range" min="0" max="20" value="10"
                                     oninput="rangeValue.innerText = this.value+'k'">
-                                <p id="rangeValue">10k</p>
+                                <h5 id="rangeValue">10k</h5>
                             </div>
                         </td>
                     </tr>

@@ -2,97 +2,113 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div>
-        <div style="margin-left: 40%;">
-            <h1>Create Account</h1>
+    <div class="container">
+        <div class="mainbox">
+            <div class="header">
+                <h1>Create Account</h1>
+            </div>
+            <form>
+                <table>
+                    <tr>
+                        <th style="width: 50%;"><label for="FirstName"> FirstName* </label></th>
+                        <th style="width: 50%;"><label for="LastName"> LastName*</label></th>
+                    </tr>
+                    <tr>
+                        <td><input id="FirstName" placeholder="enter your first name"></td>
+                        <td><input id="LastName" placeholder="enter your last name" required style="margin-left:10%;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="email"> email* </label></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input style="width: 100%;" id="email" placeholder="enter your email"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th><label for="Password"> Password* </label></th>
+                        <th><label for="confirmPassword"> confirmPassword*</label></th>
+                    </tr>
+                    <tr>
+                        <td><input id="Password" type = "password" placeholder="enter Password"></td>
+                        <td><input id="confirmPassword" type = "password" placeholder="enter Password agian" required></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <th><label for="gender"> gender </label></th>
+                        <th><label for="Hobbies"> Hobbies*</label></th>
+                    </tr>
+                    <tr>
+                        <td style="display: flex; width: 10%;">
+                            <input type="radio" id="male" value="Male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" value="Female">
+                            <label for="female">Female</label>
+                        </td>
+                        <td style="width: 20%;">
+                            <input type="checkbox" id="Music" value="Music" style="width: 10%;">
+                            <label for="Music">Music</label>
+                            <input type="checkbox" id="Sport" value="Sport" style="width: 10%;">
+                            <label for="Sport">Sport</label>
+                            <input type="checkbox" id="Travel" value="Travel" style="width: 10%;">
+                            <label for="Travel">Travel</label>
+                            <input type="checkbox" id="Movies" value="Movies" style="width: 10%;">
+                            <label for="Movies">Movies</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="source"> Source of Income* </label></th>
+                        <th><label for="Income"> Income*</label></th>
+                    </tr>
+                    <tr>
+                        <td><select name="source" id="source">
+                                <option value="Business">Business</option>
+                                <option value="employeed">employeed</option>
+                            </select></td>
+                        <td>
+                            <div class="slider">
+                                <input type="range" min="0" max="20" value="10"
+                                    oninput="rangeValue.innerText = this.value+'k'">
+                                <p id="rangeValue">10k</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <br>
+
+                    <tr>
+                        <th><label for="resume"> Upload Resume* </label></th>
+                        <th><label for="age" style="margin-left:16%;"> Age*</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="file" accept="image/*" id="resume" name="filename"></td>
+                        <td><input id="age" type="number"></td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="bio"> Bio </label></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="width: 50%;"><textarea style="width: 90%;" id="bio" cols="30"
+                                rows="8"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><input type="submit" style="margin-left: 60%;"></th>
+                    </tr>
+                </table>
+            </form>
         </div>
-        <form>
-            <div style="margin-left: 30%;">
-                <label for="FirstName"> FirstName* </label>
-                <label for="LastName" style="margin-left:21%;"> LastName*</label>
-            </div>
-            <div style="margin-left: 30%;">
-                <input id="FirstName" placeholder="enter your first name">
-                <input id="LastName" placeholder="enter your last name" required style="margin-left:10%;">
-            </div>
-            <br>
-            <div style="margin-left: 30%;">
-                <label for="email"> email* </label>
-            </div>
-            <div style="margin-left: 30%;">
-                <input id="email" placeholder="enter your email">
-            </div>
-            <br>
-            <div style="margin-left: 30%;">
-                <label for="Password"> Password* </label>
-                <label for="confirmPassword" style="margin-left:21%;"> confirmPassword*</label>
-            </div>
-            <div style="margin-left: 30%;">
-                <input id="FirstName" placeholder="enter Password">
-                <input id="confirmPassword" placeholder="enter Password agian" required style="margin-left:10%;">
-            </div>
-            <br>
-            <div style="margin-left: 30%;">
-                <label for="gender"> gender </label>
-                <label for="Hobbies" style="margin-left:24%;"> Hobbies*</label>
-            </div>
-            <div style="margin-left: 30%;">
-                <input type="radio" id="male" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" value="Female">
-                <label for="female">Female</label>
-                <input type="checkbox" id="Music" value="Music" style="margin-left:14%;">
-                <label for="Music">Music</label>
-                <input type="checkbox" id="Sport" value="Sport">
-                <label for="Sport">Sport</label>
-                <input type="checkbox" id="Travel" value="Travel">
-                <label for="Travel">Travel</label>
-                <input type="checkbox" id="Movies" value="Movies">
-                <label for="Movies">Movies</label>
-            </div>
-            <br>
-
-            <div style="margin-left: 30%;">
-                <label for="source"> Source of Income* </label>
-                <label for="Income" style="margin-left:15%;"> Income*</label>
-            </div>
-            <div style="margin-left: 30%;">
-                <select name="source" id="source">
-                    <option value="Business">Business</option>
-                    <option value="employeed">employeed</option>
-                </select>
-                <input type="range" min="1" max="20" value="" class="slider" id="Income" style="margin-left:19%;">
-            </div>
-            <br>
-
-            <div style="margin-left: 30%;">
-                <label for="resume"> Upload Resume* </label>
-                <label for="age" style="margin-left:16%;"> Age*</label>
-            </div>
-            <div style="margin-left: 30%;">
-                <input type="file" id="resume" name="filename">
-                <input id="age" type="text">
-            </div>
-            <br>
-
-            <div style="margin-left: 30%;">
-                <label for="bio"> Bio </label>
-            </div>
-            <div style="margin-left: 30%;">
-                <textarea id = "bio" cols="60" rows="8"></textarea>
-            </div>
-            <br>
-            <div>
-                <input type="submit" style="margin-left: 60%;">
-            </div>
-            <br>
-        </form>
-    </div>
 </body>
+
 </html>

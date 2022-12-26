@@ -23,7 +23,7 @@ input {
 ul{
     display: flex; 
     list-style-type: none; 
-    background-color: antiquewhite; 
+    /* background-color: antiquewhite;  */
     position: sticky; 
     justify-content: center;
 }

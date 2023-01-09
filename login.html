@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+
+
 <body style="background-image: url('./image1.png');">
     <div>
         <ul>
@@ -26,20 +29,20 @@
             <div class="header">
                 <h1>Login into Account</h1>
             </div>
-            <form>
+            <form onsubmit="verifypassword(event)">
                 <table>
                     <tr>
                         <th style="width: 50%;"><label for="email"> Email* </label></th>
                     </tr>
                     <tr>
-                        <td><input id="email" placeholder="enter your registered email"></td>
+                        <td><input id="email" placeholder="enter your registered email" value = ""></td>
                         </td>
                     </tr>
                     <tr>
                         <th style="width: 50%;"><label for="Password"> Password* </label></th>
                     </tr>
                     <tr>
-                        <td><input id="FirstName" type = password placeholder="enter your first name"></td>
+                        <td><input id="Password" type = password placeholder="enter your password" value = ""></td>
                         </td>
                     </tr>
                     <tr style="display: flex; justify-content: center;">
@@ -50,4 +53,19 @@
         </div>
     </div>
 </body>
+<script>
+    // document.getElementById("email").value = sessionStorage.getItem('param1');
+    // document.getElementById("Password").value = sessionStorage.getItem('param2');
+    
+    function verifypassword(event){
+        event.preventDefault();
+       if ( document.getElementById("email").value === sessionStorage.getItem('param1') 
+       && document.getElementById("Password").value === sessionStorage.getItem('param2')){
+        console.log(document.getElementById("email").value, document.getElementById("Password").value)
+        
+        window.location = "Home.html";
+       }
+    
+        }
+  </script>
 </html>

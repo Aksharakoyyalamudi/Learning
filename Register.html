@@ -9,6 +9,38 @@
     <title>Document</title>
 </head>
 
+<script>
+    function verifypassword(){
+
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@!#\$])(?=.{8,})/;
+    var pass = document.getElementById("Password").value
+    var conform = document.getElementById("confirmPassword").value
+    console.log(pass, 'pass')
+    console.log(conform, 'confirm')
+    if(pass!=conform){
+        alert('password does not match')
+    }
+    if (!regex.test(pass)){
+        alert('password pattern is not sattisied')
+    }
+    handleSubmit(event)
+}
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  // get the values of the input fields
+  var email = document.getElementById("email").value;
+  var Password = document.getElementById("Password").value;
+
+  window.location = "login.html";
+
+  sessionStorage.setItem('param1', email);
+  sessionStorage.setItem('param2', Password);
+}
+</script>
+
 <body style="background-image: url('./image1.png');">
     <div>
         <ul>
@@ -29,7 +61,7 @@
             <div class="header">
                 <h1>Create Account</h1>
             </div>
-            <form>
+            <form onsubmit="verifypassword(event)">
                 <table>
                     <tr>
                         <th style="width: 50%;"><label for="FirstName"> FirstName* </label></th>
@@ -55,7 +87,7 @@
                     </tr>
                     <tr>
                         <td><input id="Password" type="password" placeholder="enter Password"></td>
-                        <td><input id="confirmPassword" type="password" placeholder="enter Password agian" required>
+                        <td><input id="confirmPassword" type="password" placeholder="enter Password agian">
                         </td>
                     </tr>
                     <br>

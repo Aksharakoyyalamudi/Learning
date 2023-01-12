@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body style="background-image: url('./image1.png');">
+    <div>
+        <ul>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="Home.html">Home</a>
+            </li>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a
+                    href="Register.html">register</a></li>
+            <li style="padding: 2%;  background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="login.html">login</a>
+            </li>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="classes.html">classes</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="mainbox" style="margin: 5%; padding: 5%;">
+
+            <button onclick="displaydetails(event)">Click me</button>
+            <div id="example"></div>
+        </div>
+    </div>
+</body>
+<script>
+
+    function displaydetails(event) {
+        event.preventDefault();
+        const table = document.createElement("table");
+        const tbody = document.createElement("tbody");
+
+        fetch('https://www.abibliadigital.com.br/api/books')
+            .then(response => response.json())
+            .then(data => {
+
+                // sessionStorage.setItem('data', JSON.stringify(data));
+                data.forEach(function (element) {
+                    const row = document.createElement("tr");
+                    for (const key in element) {
+                        const cell = document.createElement("td");
+                        if (typeof key !== "object") {
+                            cell.innerText = element[key];
+                            row.appendChild(cell);
+                        }
+
+                    }
+                    tbody.appendChild(row);
+                });
+            }).catch(error => console.error(error))
+
+        table.appendChild(tbody);
+        document.getElementById("example").append(table)
+
+    }
+
+
+</script>
+
+</html>

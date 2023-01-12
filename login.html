@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
@@ -19,11 +20,11 @@
                     href="Register.html">register</a></li>
             <li style="padding: 2%;  background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="login.html">login</a>
             </li>
-            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a
-                    href="Register.html">classes</a></li>
+            <li style="padding: 2%; background-color: rgb(54, 95, 54); flex-grow: 1;"><a href="classes.html">classes</a>
+            </li>
         </ul>
     </div>
-    
+
     <div class="container">
         <div class="mainbox" style="margin: 5%; padding: 5%;">
             <div class="header">
@@ -35,14 +36,14 @@
                         <th style="width: 50%;"><label for="email"> Email* </label></th>
                     </tr>
                     <tr>
-                        <td><input id="email" placeholder="enter your registered email" value = ""></td>
+                        <td><input id="email" placeholder="enter your registered email" value=""></td>
                         </td>
                     </tr>
                     <tr>
                         <th style="width: 50%;"><label for="Password"> Password* </label></th>
                     </tr>
                     <tr>
-                        <td><input id="Password" type = password placeholder="enter your password" value = ""></td>
+                        <td><input id="Password" type=password placeholder="enter your password" value=""></td>
                         </td>
                     </tr>
                     <tr style="display: flex; justify-content: center;">
@@ -56,16 +57,17 @@
 <script>
     // document.getElementById("email").value = sessionStorage.getItem('param1');
     // document.getElementById("Password").value = sessionStorage.getItem('param2');
-    
-    function verifypassword(event){
+
+    function verifypassword(event) {
         event.preventDefault();
-       if ( document.getElementById("email").value === sessionStorage.getItem('param1') 
-       && document.getElementById("Password").value === sessionStorage.getItem('param2')){
-        console.log(document.getElementById("email").value, document.getElementById("Password").value)
-        
-        window.location = "Home.html";
-       }
-    
+        if (document.getElementById("email").value === sessionStorage.getItem('param1')
+            && document.getElementById("Password").value === sessionStorage.getItem('param2')) {
+            console.log(document.getElementById("email").value, document.getElementById("Password").value)
+
+            window.location = "classes.html";
         }
-  </script>
+
+    }
+</script>
+
 </html>
